@@ -16,7 +16,7 @@ jobs:
         distribution: 'temurin'
  
     - name: Build with Maven
-      run: mvn clean install
+      run: mvn -B package --file pom.xml
 
     - name: Create Release
       uses: elgohr/Github-Release-Action@v4

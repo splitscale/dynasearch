@@ -21,31 +21,33 @@ Dynasearch is a Java module that provides a generic implementation for full-text
 Here's an example usage:
 
 ```java
-// Sample data
-List<Person> people = Arrays.asList(
-        new Person("John", "Doe", "Engineer"),
-        new Person("Jane", "Smith", "Manager"),
-        new Person("Bob", "Johnson", "Engineer"),
-        new Person("Alice", "Doe", "Designer")
-);
+public class Main {
+    public static void main(String[] args) {
+        // Sample data
+        List<Person> people = Arrays.asList(
+                new Person("John", "Doe", "Engineer"),
+                new Person("Jane", "Smith", "Manager"),
+                new Person("Bob", "Johnson", "Engineer"),
+                new Person("Alice", "Doe", "Designer")
+        );
 
-// Create PropertyAccessors for 'firstName', 'lastName', and 'jobTitle'
-List<PropertyAccessor<Person>> propertyAccessors = Arrays.asList(
-        new FieldPropertyAccessor<>("firstName"),
-        new FieldPropertyAccessor<>("lastName"),
-        new FieldPropertyAccessor<>("jobTitle")
-);
+        // Generate PropertyAccessors for Person class properties
+        PropertyAccessorGenerator<Person> generator = new PropertyAccessorGenerator<>(Person.class);
+        List<PropertyAccessor<Person>> propertyAccessors = generator.generatePropertyAccessors();
 
-// Create a GenericTextSearch instance
-GenericTextSearch<Person> search = new GenericTextSearch<>(people, propertyAccessors);
+        // Create a GenericTextSearch instance
+        GenericTextSearch<Person> search = new GenericTextSearch<>(people, propertyAccessors);
 
-// Perform a free-text search
-List<Person> searchResults = search.search("Doe");
+        // Perform a free-text search
+        List<Person> searchResults = search.search("Doe");
 
-// Print the search results
-for (Person person : searchResults) {
-    System.out.println(person.getFirstName() + " " + person.getLastName() + " - " + person.getJobTitle());
+        // Print the search results
+        for (Person person : searchResults) {
+            System.out.println(person.getFirstName() + " " + person.getLastName() + " - " + person.getJobTitle());
+        }
+    }
 }
+
 ```
 
 ## Case Sensitivity

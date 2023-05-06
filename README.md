@@ -8,15 +8,18 @@ Dynasearch is a Java module that provides a generic implementation for full-text
 - Search for text in one or more properties of the items
 - Case-insensitive search
 - Supports searching multiple terms within a property
-- Easily customizable with property accessors
 
 ## Usage
 
-1. Create an iterable collection of objects that you want to search.
-2. Implement the `PropertyAccessor` interface to specify how to access the properties to be searched.
-3. Create an instance of the `GenericTextSearch` class, passing in the iterable collection and the list of property accessors.
-4. Use the `search` method to perform the search, providing the search text.
-5. Receive the search results as a list of matching items.
+Add this to you pom.xml inside the `<dependencies>`
+
+```xml
+  <dependency>
+    <groupId>com.splitscale</groupId>
+    <artifactId>dynasearch</artifactId>
+    <version>1.0</version>
+  </dependency>
+```
 
 Here's an example usage:
 

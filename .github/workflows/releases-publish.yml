@@ -8,10 +8,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-
+    
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
@@ -19,14 +16,11 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
-        settings-path: ${{ github.workspace }} # location for the settings.xml file
-
+ 
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn clean install
 
     - name: Create Release
-      id: create_release
       uses: elgohr/Github-Release-Action@v4
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -34,9 +28,8 @@ jobs:
         title: ${{ github.ref }}
 
     - name: Upload Artifact
-      id: upload_artifact
       uses: softprops/action-gh-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        files: ./target/dynasearch-1.0.jar
+        files:  ./target/dynasearch-1.0.jar

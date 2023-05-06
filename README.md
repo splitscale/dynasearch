@@ -42,8 +42,8 @@ for (Person person : searchResults) {
 }
 
 // returns
-John Doe - Engineer
-Bob Johnson - Engineer
+// John Doe - Engineer
+// Bob Johnson - Engineer
 ```
 
 ## Case Sensitivity

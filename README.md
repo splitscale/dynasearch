@@ -1,5 +1,7 @@
 # dynasearch
 
+[![Maven Package](https://github.com/splitscale/dynasearch/actions/workflows/maven-publish.yml/badge.svg?event=release)](https://github.com/splitscale/dynasearch/actions/workflows/maven-publish.yml)
+
 Dynasearch is a Java module that provides a generic implementation for full-text search on any iterable collection. It allows users to search for text in one or more properties of the items in the collection.
 
 ## Features

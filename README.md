@@ -36,7 +36,7 @@ public class Main {
         List<PropertyAccessor<Person>> propertyAccessors = generator.generatePropertyAccessors();
 
         // Create a GenericTextSearch instance
-        GenericTextSearch<Person> search = new GenericTextSearch<>(people, propertyAccessors);
+        GenericTextSearch<Person> search = new GenericTextSearch<Person>(people, propertyAccessors);
 
         // Perform a free-text search
         List<Person> searchResults = search.search("Doe");

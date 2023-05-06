@@ -26,9 +26,8 @@ jobs:
         title: ${{ github.ref }}
 
     - name: Upload Artifact
-      uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: actions/upload-artifact@v3
       with:
-        files: /home/runner/work/dynasearch/dynasearch/target/dynasearch-1.0.jar
+        name: dynasearch
+        path: /home/runner/work/dynasearch/dynasearch/target/dynasearch-1.0.jar
+        if-no-files-found: error

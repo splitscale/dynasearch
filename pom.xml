@@ -8,6 +8,15 @@
   <artifactId>dynasearch</artifactId>
   <version>1.0</version>
 
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub splitscale Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/splitscale/dynasearch</url>
+    </repository>
+  </distributionManagement>
+
+
   <name>dynasearch</name>
   <url>http://splitscale.systems</url>
 

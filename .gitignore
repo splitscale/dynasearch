@@ -1,0 +1,24 @@
+# Maven target directory
+/target/
+
+# Compiled sources
+**/target/
+
+# Maven wrapper files (if using the Maven Wrapper)
+/.mvn/wrapper/
+
+# IntelliJ IDEA files (if using IntelliJ as the IDE)
+.idea/
+
+# Eclipse files (if using Eclipse as the IDE)
+.classpath
+.project
+.settings/
+
+# NetBeans files (if using NetBeans as the IDE)
+/nb-configuration.xml
+/nbactions.xml
+/nb-gradle.xml
+/nb-ide-versioning.properties
+/nb-configuration/
+/build/

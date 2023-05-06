@@ -41,6 +41,9 @@ for (Person person : searchResults) {
     System.out.println(person.getFirstName() + " " + person.getLastName() + " - " + person.getJobTitle());
 }
 
+// returns
+John Doe - Engineer
+Bob Johnson - Engineer
 ```
 
 ## Case Sensitivity

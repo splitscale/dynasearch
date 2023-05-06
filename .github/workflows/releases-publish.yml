@@ -31,4 +31,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        files:  ./target/dynasearch-1.0.jar
+        files: /home/runner/work/dynasearch/dynasearch/target/dynasearch-1.0.jar
